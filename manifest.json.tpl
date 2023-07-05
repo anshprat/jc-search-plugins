@@ -14,4 +14,6 @@
     }
   ],
   "permissions": ["activeTab"]
+  BROWSER_SPECIFIC_SETTINGS
+
 }
