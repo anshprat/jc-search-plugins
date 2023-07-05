@@ -1,10 +1,12 @@
 set -x
 basepath=~/tmp
-srcfolder="$basepath/jc-search-plugin"
+today=$(date +%Y.%M%d.%H%m.%S)
+srcfolder="$basepath/${today}/jc-search-plugin"
 files="content_script.js icon.png manifest.json styles.css"
 
+
 update_tmpl() {
-    sed -e "s/BROWSER_SPECIFIC_SETTINGS/$BROWSER_SPECIFIC_SETTINGS/" manifest.json.tpl |jq > manifest.json
+    sed -e "s/APPVERSION/${today}/" -e "s/BROWSER_SPECIFIC_SETTINGS/$BROWSER_SPECIFIC_SETTINGS/" manifest.json.tpl |jq > manifest.json
 }
 
 
