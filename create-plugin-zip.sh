@@ -1,7 +1,8 @@
 set -x
 basepath=~/tmp
 today=$(date +%Y.%m%d.%H%M.%S|sed -e 's/\.0/\./g')
-srcfolder="$basepath/${today}/jc-search-plugin"
+basefolder="$basepath/${today}"
+srcfolder="$basefolder/jc-search-plugin"
 files="content_script.js icon.png manifest.json styles.css"
 
 
@@ -29,5 +30,5 @@ update_tmpl $BROWSER_SPECIFIC_SETTINGS
 
 zip -r -FS ${srcfolder}-firefox.zip $files
 
-open ${srcfolder}
+open ${basefolder}
 
