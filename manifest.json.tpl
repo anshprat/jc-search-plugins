@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": BROWSER_MANIFEST_VERSION,
   "name": "JumpCloud Search Plugin",
   "version": "APPVERSION",
   "description": "Adds a search box to filter applications on console.jumpcloud.com",
@@ -8,7 +8,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://console.jumpcloud.com/*"],
+      "matches": ["https://console.jumpcloud.com/*"],
       "js": ["content_script.js"],
       "css": ["styles.css"]
     }
